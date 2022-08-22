@@ -16,7 +16,7 @@ function getSafe(func) {
 const getElement = (e, chartInstance, callback) => {  
   element = chartInstance.getElementsAtEventForMode(e, 'nearest', { intersect: true }, false)[0]
   type = chartInstance.config.type
-
+  console.log("getElement")
   if (element) {    
     let datasetIndex = element.datasetIndex
     let index = element.index
@@ -165,6 +165,7 @@ function calcPosition(e, chartInstance, datasetIndex, index, data) {
 }
 
 const updateData = (e, chartInstance, pluginOptions, callback) => {
+    console.log("update data")
   if (element) {
     curDatasetIndex = element.datasetIndex
     curIndex = element.index
@@ -209,6 +210,7 @@ function applyMagnet(chartInstance, i, j) {
 }
 
 const dragEndCallback = (e, chartInstance, callback) => {
+ console.log("drag end")
   curDatasetIndex, curIndex = undefined
   isDragging = false
   // re-enable the tooltip animation
